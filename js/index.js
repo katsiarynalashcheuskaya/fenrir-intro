@@ -27,7 +27,8 @@ messageForm.addEventListener('submit', e => {
     const messageSection = document.getElementById('messages');
     const messageList = messageSection.querySelector('ul');
     const newMessage = document.createElement('li');
-    newMessage.innerHTML = `<a href='mailto:${usersEmail}'>${usersName} </a> <span>wrote: ${usersMessage} </span>`;
+
+    newMessage.innerHTML = `<a href='mailto:${usersEmail}'>${usersName} </a> <span>wrote:</span> <span id="message">${usersMessage}</span>`;
     const removeButton = document.createElement('button');
     removeButton.innerText = 'remove';
     removeButton.type = 'button';
@@ -39,7 +40,24 @@ messageForm.addEventListener('submit', e => {
         entry.remove();
         hideMessageSection();
     })
+
+    const editButton = document.createElement('button');
+    editButton.innerText = 'edit';
+    editButton.type = 'button';
+    editButton.addEventListener('click', e => {
+        const message = document.getElementById('message');
+        const textarea = document.createElement('textarea');
+        textarea.value = message.innerText;
+        message.replaceWith(textarea)
+        textarea.focus();
+        textarea.addEventListener('blur', e => {
+            message.textContent = e.target.value;
+            textarea.replaceWith(message)
+        })
+    })
+
     newMessage.appendChild(removeButton);
+    newMessage.appendChild(editButton);
     messageList.appendChild(newMessage);
     e.target.reset();
     hideMessageSection();
