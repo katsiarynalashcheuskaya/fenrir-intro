@@ -44,8 +44,6 @@ messageForm.addEventListener('submit', e => {
     editButton.innerText = 'edit';
     editButton.type = 'button';
     editButton.addEventListener('click', e => {
-        const message = document.querySelector('#message');
-        console.log(message)
         const textarea = document.createElement('textarea');
         const entry = editButton.parentNode.querySelector('#message');
         entry.replaceWith(textarea)
