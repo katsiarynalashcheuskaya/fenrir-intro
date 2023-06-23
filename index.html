@@ -12,9 +12,9 @@
 
 <section>
     <h1>About</h1>
-    <p>Hi there, I'm a frontend developer. I have experience in creating SPA using React, Redux, TypeScript. I'm continuously improving my English,
-        studying new technologies and solving tasks on Codewars in my spare time. Also, my strengths are great analytical skills,
-        responsibility and stress resistance.
+    <p>Hi there, I'm a frontend developer. I have experience in creating SPA using React, Redux, TypeScript. I'm
+        continuously improving my English, studying new technologies and solving tasks on Codewars in my spare time.
+        Also, my strengths are great analytical skills, responsibility and stress resistance.
     </p>
 </section>
 
@@ -22,8 +22,9 @@
     <h1>Experience</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
     </p>
 </section>
 
@@ -39,6 +40,27 @@
         <li>ek.sharova@icloud.com</li>
         <li>https://github.com/katsiarynalashcheuskaya</li>
     </ul>
+</section>
+
+<section>
+    <h2>Leave a Message</h2>
+    <form id="leave_message" style="display: flex; flex-direction: column; width: 300px">
+        <label for="usersName">Name:</label>
+        <input type="text" id="usersName" name="usersName" required="true">
+        <br>
+        <label for="usersEmail">Email:</label>
+        <input type="email" id="usersEmail" name="usersEmail" required="true">
+        <br>
+        <label for="usersMessage">Message:</label>
+        <textarea id="usersMessage" name="usersMessage" required="true" placeholder="Your message..."></textarea>
+        <br>
+        <button type="submit" style="width: 60px">Submit</button>
+    </form>
+</section>
+
+<section id="messages" style="display: none">
+    <h2>Messages</h2>
+    <ul></ul>
 </section>
 
 <footer id="footer"></footer>
