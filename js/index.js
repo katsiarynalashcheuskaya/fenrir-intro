@@ -22,7 +22,6 @@ messageForm.addEventListener('submit', e => {
     const usersName = e.target.usersName.value;
     const usersEmail = e.target.usersEmail.value;
     const usersMessage = e.target.usersMessage.value;
-    console.log(usersName, usersEmail, usersMessage);
     e.preventDefault();
     const messageSection = document.getElementById('messages');
     const messageList = messageSection.querySelector('ul');
@@ -45,14 +44,16 @@ messageForm.addEventListener('submit', e => {
     editButton.innerText = 'edit';
     editButton.type = 'button';
     editButton.addEventListener('click', e => {
-        const message = document.getElementById('message');
+        const message = document.querySelector('#message');
+        console.log(message)
         const textarea = document.createElement('textarea');
-        textarea.value = message.innerText;
-        message.replaceWith(textarea)
+        const entry = editButton.parentNode.querySelector('#message');
+        entry.replaceWith(textarea)
+        textarea.value = entry.innerText;
         textarea.focus();
         textarea.addEventListener('blur', e => {
-            message.textContent = e.target.value;
-            textarea.replaceWith(message)
+            entry.textContent = e.target.value;
+            textarea.replaceWith(entry);
         })
     })
 
