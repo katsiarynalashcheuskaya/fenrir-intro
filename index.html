@@ -5,65 +5,120 @@
     <meta charset="UTF-8">
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Katsiaryna Lashcheuskaya">
+    <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
 
-<h1>Katsiaryna Lashcheuskaya</h1>
-
-<section>
-    <h1>About</h1>
-    <p>Hi there, I'm a frontend developer. I have experience in creating SPA using React, Redux, TypeScript. I'm
-        continuously improving my English, studying new technologies and solving tasks on Codewars in my spare time.
-        Also, my strengths are great analytical skills, responsibility and stress resistance.
-    </p>
+<section class="homeSection">
+    <span>HELLO, I AM</span>
+    <h1>Katsiaryna Lashcheuskaya</h1>
 </section>
 
-<section>
-    <h1>Experience</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
-    </p>
+<section class="aboutSection ">
+    <div class="aboutContainer container">
+        <div class="aboutWrapper">
+            <div class="aboutDesc">
+                <h1 class="aboutTitle">About Me</h1>
+                <p class="aboutMeText">Hi there, I'm a frontend developer. I have experience in creating SPA using
+                    React, Redux,
+                    TypeScript. I'm
+                    continuously improving my English, studying new technologies and solving tasks on Codewars in my
+                    spare time.
+                    Also, my strengths are great analytical skills, responsibility and stress resistance.
+                </p>
+            </div>
+            <div class="photo">
+                <img
+                        src='images/myPhoto.jpeg'
+                        alt='My photo'/>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section id="skills">
-    <h2>Skills</h2>
-    <ul>
-    </ul>
+<section id="skills" class="skillsSection">
+    <div class="skillsContainer container">
+        <div class="sectionTitle">
+            <span>What I know</span>
+            <h2>MY SKILLS</h2>
+        </div>
+        <ul class="skillsItems"></ul>
+    </div>
 </section>
 
-<section>
-    <h1>Connect</h1>
-    <ul>
-        <li>ek.sharova@icloud.com</li>
-        <li>https://github.com/katsiarynalashcheuskaya</li>
-    </ul>
+<section class="projectsSection">
+    <div class="container projectContainer">
+        <div class="sectionTitle">
+            <span>What I can</span>
+            <h2>MY PROJECTS</h2>
+        </div>
+        <ul class="projectItems">
+            <li>
+                <img src='images/toDo.png'
+                     alt='ToDo List image'>
+                <h3>To-Do list</h3>
+                <span>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</span>
+            </li>
+            <li>
+                <img src='images/socialnetwork.jpeg'
+                     alt='Social Network image'>
+                <h3 class="title">Social network</h3>
+                <span class="description">Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</span>
+            </li>
+        </ul>
+    </div>
 </section>
 
-<section>
-    <h2>Leave a Message</h2>
-    <form id="leave_message" style="display: flex; flex-direction: column; width: 300px">
-        <label for="usersName">Name:</label>
-        <input type="text" id="usersName" name="usersName" required="true">
-        <br>
-        <label for="usersEmail">Email:</label>
-        <input type="email" id="usersEmail" name="usersEmail" required="true">
-        <br>
-        <label for="usersMessage">Message:</label>
-        <textarea id="usersMessage" name="usersMessage" required="true" placeholder="Your message..."></textarea>
-        <br>
-        <button type="submit" style="width: 60px">Submit</button>
-    </form>
+<section class="connectSection">
+    <div class="container">
+        <div class="sectionTitle">
+            <span>SAY HELLO</span>
+            <h2>CONNECT</h2>
+        </div>
+        <ul>
+            <li>
+                <a href='mailto:ek.sharova@icloud.com'>ek.sharova@icloud.com</a>
+                <h5>Email Me</h5>
+            </li>
+            <li>
+                <a href="https://github.com/katsiarynalashcheuskaya">https://github.com/katsiarynalashcheuskaya</a>
+                <h5>My GitHub</h5>
+            </li>
+            <li>
+                <a href="https://www.google.com/maps/place/Charlotte,+NC/@35.2031535,-80.8398289,11z/data=!3m1!4b1!4m6!3m5!1s0x88541fc4fc381a81:0x884650e6bf43d164!8m2!3d35.2270869!4d-80.8431267!16zL20vMGZzYjg?hl=en&entry=ttu">Charlotte, NC</a>
+                <h5>My Location</h5>
+            </li>
+        </ul>
+    </div>
 </section>
 
-<section id="messages" style="display: none">
-    <h2>Messages</h2>
-    <ul></ul>
+<section class="messageFormSection">
+    <div class="container formContainer">
+        <h2>Leave a Message</h2>
+        <form id="leave_message">
+            <div class="inputs">
+                <input type="text" id="usersName" name="usersName" required="true" placeholder="Your Name *">
+                <input type="email" id="usersEmail" name="usersEmail" required="true" placeholder="Your Email *">
+            </div>
+            <textarea id="usersMessage" name="usersMessage" required="true" placeholder="Your message..."></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </section>
 
-<footer id="footer"></footer>
+<section id="messages" class="messagesSection">
+    <div class="container messageContainer">
+        <h3>Messages</h3>
+        <ul></ul>
+    </div>
+</section>
+
+<footer class='footer' id="footer">
+    <div class="container"></div>
+</footer>
+
 <script src='js/index.js'></script>
+
 </body>
 </html>
