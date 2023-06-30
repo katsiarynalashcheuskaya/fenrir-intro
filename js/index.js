@@ -6,8 +6,8 @@ copyright.innerHTML = `&#169 Katsiaryna Lashcheuskaya ${thisYear}`;
 footer.appendChild(copyright);
 
 const skills = [
-    'HTML/CSS/SCSS', 'JavaScript/TypeScript', 'React/Redux/Redux Toolkit', 'Postman',
-    'Axios/REST API', 'Git/GitHub', 'Unit-test/Storybook', 'Material UI', 'SASS', 'Figma'
+    'HTML', 'CSS/SCSS', 'JavaScript', 'TypeScript', 'React', 'Redux', 'Redux Toolkit', 'Postman',
+    'Axios', 'REST API', 'Git', 'GitHub', 'Unit-test', 'Storybook', 'Material UI', 'SASS', 'Figma'
 ]
 const skillsSection = document.querySelector('#skills')
 const skillsList = skillsSection.querySelector('ul')
@@ -16,6 +16,7 @@ for (let i = 0; i < skills.length; i++) {
     skill.innerText = skills[i];
     skillsList.appendChild(skill);
 }
+
 
 const messageForm = document.getElementById('leave_message')
 messageForm.addEventListener('submit', e => {
@@ -28,6 +29,7 @@ messageForm.addEventListener('submit', e => {
     const newMessage = document.createElement('li');
 
     newMessage.innerHTML = `<a href='mailto:${usersEmail}'>${usersName} </a> <span>wrote:</span> <span id="message">${usersMessage}</span>`;
+
     const removeButton = document.createElement('button');
     removeButton.innerText = 'remove';
     removeButton.type = 'button';
@@ -55,8 +57,8 @@ messageForm.addEventListener('submit', e => {
         })
     })
 
-    newMessage.appendChild(removeButton);
     newMessage.appendChild(editButton);
+    newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
     e.target.reset();
     hideMessageSection();
