@@ -46,13 +46,21 @@ messageForm.addEventListener('submit', e => {
     editButton.innerText = 'edit';
     editButton.type = 'button';
     editButton.addEventListener('click', e => {
+        editButton.innerText = 'save';
+        removeButton.style.display = 'none';
         const textarea = document.createElement('textarea');
+        textarea.id = 'messageTextarea';
         const entry = editButton.parentNode.querySelector('#message');
-        entry.replaceWith(textarea)
+        console.log('entryEditButton = ', entry);
+        if (entry) {
+            entry.replaceWith(textarea);
+        }
         textarea.value = entry.innerText;
         textarea.focus();
-        textarea.addEventListener('blur', e => {
-            entry.textContent = e.target.value;
+        editButton.addEventListener('click', e => {
+            removeButton.style.display = 'inline'
+            editButton.innerText = 'edit';
+            entry.textContent = textarea.value;
             textarea.replaceWith(entry);
         })
     })
