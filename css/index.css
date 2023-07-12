@@ -96,10 +96,41 @@ textarea {
     color: #878d8d;
 }
 
+/*HEADER*/
+header {
+    height: 60px;
+    background-color: rgba(37, 40, 42, 0.91);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+
+nav {
+    width: 300px;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 360px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #fd735a;
+}
+
 /*HOME SECTION*/
 .homeSection {
     height: 100vh;
-    background: linear-gradient(#7c7247, #f7f7f7);
+    background: linear-gradient(#544b30, #f7f7f7);
     /*background-image: url('');
     background-size: cover;
     background-position: center;
@@ -354,25 +385,35 @@ form input {
 
 .messageContainer button {
     width: 100px;
-    margin: 10px 5px;
+    margin: 10px 5px 10px 0;
     padding: 5px 0;
 }
 
-.messageContainer ul li {
+.messageContainer ul span {
     font-family: 'Josefin Sans', sans-serif;
-    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #333
+}
+
+.messagesSection ul div {
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    color: #333;
+    word-wrap: break-word;
+    width: 100%;
 }
 
 .messageContainer ul a {
+    font-weight: 700;
     color: #fd735a;
 }
 
 /*FOOTER*/
-.footer {
+footer {
     background-color: #fff;
     padding: 30px 0;
     display: flex;
@@ -380,7 +421,7 @@ form input {
     align-items: center;
 }
 
-.footer p {
+footer p {
     color: #6E7373;
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
@@ -437,8 +478,6 @@ form input {
     display: flex;
     align-items: center;
     justify-content: center;
-
-
 }
 
 @media screen and (max-width: 1440px) {
