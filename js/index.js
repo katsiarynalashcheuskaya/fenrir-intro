@@ -35,28 +35,9 @@ messageForm.addEventListener('submit', e => {
     const removeFunction = () => {
         const entry = removeButton.parentNode;
         entry.remove();
-    }
-    removeButton.addEventListener('click', e => {
-        removeFunction();
         hideMessageSection();
-    })
-
-    const saveButton = document.createElement('button');
-    saveButton.innerText = 'save';
-    saveButton.type = 'button';
-    saveButton.style.display = 'none'
-    const saveFunction = () => {
-        saveButton.style.display = 'none'
-        editButton.style.display = 'inline';
-        removeButton.style.display = 'inline';
-        let entry = saveButton.parentNode.querySelector('#message');
-        let textarea = document.getElementById('messageTextarea');
-        entry.textContent = textarea.value;
-        textarea.replaceWith(entry);
     }
-    saveButton.addEventListener('click', e => {
-        saveFunction();
-    })
+    removeButton.addEventListener('click', removeFunction)
 
     const editButton = document.createElement('button');
     editButton.innerText = 'edit';
@@ -64,17 +45,33 @@ messageForm.addEventListener('submit', e => {
     const editFunction = () => {
         editButton.style.display = 'none';
         removeButton.style.display = 'none';
-        saveButton.style.display = 'inline'
+        saveButton.style.display = ''
+        let entry = editButton.parentNode.querySelector('#message');
+        entry.style.display = 'none';
         let textarea = document.createElement('textarea');
         textarea.id = 'messageTextarea';
-        let entry = editButton.parentNode.querySelector('#message');
-        entry.replaceWith(textarea);
         textarea.value = entry.innerText;
+        entry.after(textarea);
         textarea.focus();
     }
-    editButton.addEventListener('click', e => {
-        editFunction();
-    })
+    editButton.addEventListener('click', editFunction);
+
+    const saveButton = document.createElement('button');
+    saveButton.innerText = 'save';
+    saveButton.type = 'button';
+    saveButton.style.display = 'none';
+    const saveFunction = () => {
+        saveButton.style.display = 'none';
+        editButton.style.display = '';
+        removeButton.style.display = '';
+        let entry = saveButton.parentNode.querySelector('#message');
+        let textarea = document.getElementById('messageTextarea');
+        entry.textContent = textarea.value;
+        textarea.remove();
+        entry.style.display = '';
+    }
+    saveButton.addEventListener('click', saveFunction);
+
 
     newMessage.appendChild(editButton);
     newMessage.appendChild(saveButton);
