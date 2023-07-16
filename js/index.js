@@ -80,3 +80,40 @@ messageForm.addEventListener('submit', e => {
     e.target.reset();
     hideMessageSection();
 })
+
+const projectSection = document.getElementById('projects');
+const projectList = projectSection.querySelector('ul');
+
+const githubRequest = new XMLHttpRequest();
+githubRequest.open('GET', 'https://api.github.com/users/katsiarynalashcheuskaya/repos');
+githubRequest.send();
+githubRequest.onload = function () {
+    const projects = JSON.parse(this.response)
+    for (let i = 0; i < projects.length; i++) {
+        if (projects[i].name === 'react-todo') {
+            const project = document.createElement('li');
+            const description = projects[i]["description"];
+            project.innerHTML = `<img src='images/toDo.png' alt='ToDo List image'> 
+                                 <a href=${projects[i]['html_url']}>ToDo List</a>
+                                  <span>${description}</span>`
+            projectList.appendChild(project)
+        }
+        if (projects[i].name === 'social-network') {
+            const project = document.createElement('li');
+            const description = projects[i]["description"];
+            project.innerHTML = `<img src='images/socialnetwork.jpeg' alt='Social Network image'> 
+                                 <a href=${projects[i]['html_url']}>Social Network</a>
+                                  <span>${description}</span>`
+            projectList.appendChild(project)
+        }
+        if (projects[i].name === 'counter') {
+            const project = document.createElement('li');
+            const description = projects[i]["description"];
+            project.innerHTML = `<img src='images/counter.jpeg' alt='Social Network image'> 
+                                 <a href=${projects[i]['html_url']}>Smart Counter</a>
+                                  <span>${description}</span>`
+            projectList.appendChild(project)
+        }
+    }
+}
+
