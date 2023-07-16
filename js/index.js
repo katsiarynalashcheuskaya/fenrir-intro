@@ -116,4 +116,3 @@ githubRequest.onload = function () {
         }
     }
 }
-
