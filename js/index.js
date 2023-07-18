@@ -84,7 +84,7 @@ messageForm.addEventListener('submit', e => {
 const projectSection = document.getElementById('projects');
 const projectList = projectSection.querySelector('ul');
 
-const githubRequest = new XMLHttpRequest();
+/*const githubRequest = new XMLHttpRequest();
 githubRequest.open('GET', 'https://api.github.com/users/katsiarynalashcheuskaya/repos');
 githubRequest.send();
 githubRequest.onload = function () {
@@ -115,4 +115,40 @@ githubRequest.onload = function () {
             projectList.appendChild(project)
         }
     }
-}
+}*/
+
+fetch('https://api.github.com/users/katsiarynalashcheuskaya/repos')
+    .then(function(response) {
+        return response.json()
+    })
+    .then(function(projects) {
+            for (let i = 0; i < projects.length; i++) {
+                if (projects[i].name === 'react-todo') {
+                    const project = document.createElement('li');
+                    const description = projects[i]["description"];
+                    project.innerHTML = `<img src='images/toDo.png' alt='ToDo List image'> 
+                                 <a href=${projects[i]['html_url']}>ToDo List</a>
+                                  <span>${description}</span>`
+                    projectList.appendChild(project)
+                }
+                if (projects[i].name === 'social-network') {
+                    const project = document.createElement('li');
+                    const description = projects[i]["description"];
+                    project.innerHTML = `<img src='images/socialnetwork.jpeg' alt='Social Network image'> 
+                                 <a href=${projects[i]['html_url']}>Social Network</a>
+                                  <span>${description}</span>`
+                    projectList.appendChild(project)
+                }
+                if (projects[i].name === 'counter') {
+                    const project = document.createElement('li');
+                    const description = projects[i]["description"];
+                    project.innerHTML = `<img src='images/counter.jpeg' alt='Social Network image'> 
+                                 <a href=${projects[i]['html_url']}>Smart Counter</a>
+                                  <span>${description}</span>`
+                    projectList.appendChild(project)
+                }
+        }
+    })
+    .catch(function(err) {
+        console.log(err);
+    });
