@@ -118,37 +118,56 @@ githubRequest.onload = function () {
 }*/
 
 fetch('https://api.github.com/users/katsiarynalashcheuskaya/repos')
-    .then(function(response) {
+    .then(function (response) {
         return response.json()
     })
-    .then(function(projects) {
-            for (let i = 0; i < projects.length; i++) {
-                if (projects[i].name === 'react-todo') {
-                    const project = document.createElement('li');
-                    const description = projects[i]["description"];
-                    project.innerHTML = `<img src='images/toDo.png' alt='ToDo List image'> 
-                                 <a href=${projects[i]['html_url']}>ToDo List</a>
+    .then(function (projects) {
+        for (let i = 0; i < projects.length; i++) {
+            if (projects[i].name === 'react-todo') {
+                const project = document.createElement('li');
+                const description = projects[i]["description"];
+                project.innerHTML = `<img src='images/toDo.png' alt='ToDo List image'>
+                                    <div class="linksContainer">
+                                        <h2>ToDo List</h2> 
+                                        <div class="projectLinks">
+                                            <button onClick=${projects[i]['html_url']}>code</button>
+                                 <button onClick='https://katsiarynalashcheuskaya.github.io/fenrir-intro/'>view</button>
+                                        </div>
+                                    </div>
                                   <span>${description}</span>`
-                    projectList.appendChild(project)
-                }
-                if (projects[i].name === 'social-network') {
-                    const project = document.createElement('li');
-                    const description = projects[i]["description"];
-                    project.innerHTML = `<img src='images/socialnetwork.jpeg' alt='Social Network image'> 
-                                 <a href=${projects[i]['html_url']}>Social Network</a>
+                projectList.appendChild(project)
+            }
+            if (projects[i].name === 'social-network') {
+                const project = document.createElement('li');
+                const description = projects[i]["description"];
+                project.innerHTML = `<img src='images/socialnetwork.jpeg' alt='Social Network image'> 
+                                 <div class="linksContainer">
+                                 <h2>Social Network</h2> 
+                                 <div class="projectLinks">
+                                 <button onClick=${projects[i]['html_url']}>code</button>
+                                 <button onClick='https://katsiarynalashcheuskaya.github.io/fenrir-intro/'>view</button>
+                                        </div>
+                                        </div>
                                   <span>${description}</span>`
-                    projectList.appendChild(project)
-                }
-                if (projects[i].name === 'counter') {
-                    const project = document.createElement('li');
-                    const description = projects[i]["description"];
-                    project.innerHTML = `<img src='images/counter.jpeg' alt='Social Network image'> 
-                                 <a href=${projects[i]['html_url']}>Smart Counter</a>
+                projectList.appendChild(project)
+            }
+            if (projects[i].name === 'counter') {
+                const project = document.createElement('li');
+                const description = projects[i]["description"];
+                project.innerHTML = `<img src='images/counter.jpeg' alt='Social Network image'> 
+<div class="linksContainer">
+                                 <h2>Smart Counter</h2> 
+                                 <div class="projectLinks">
+                                 <button onClick=${projects[i]['html_url']}>code</button>
+                                 <button onClick='https://katsiarynalashcheuskaya.github.io/fenrir-intro/'>view</button>
+                                        </div>
+                                        </div>
+                                
                                   <span>${description}</span>`
-                    projectList.appendChild(project)
-                }
+                projectList.appendChild(project)
+            }
         }
     })
-    .catch(function(err) {
+    .catch(function (err) {
         console.log(err);
     });
