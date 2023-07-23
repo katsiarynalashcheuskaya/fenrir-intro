@@ -128,14 +128,18 @@ fetch('https://api.github.com/users/katsiarynalashcheuskaya/repos')
                 const description = projects[i]["description"];
                 project.innerHTML = `<img src='images/toDo.png' alt='ToDo List image'>
                                     <div class="linksContainer">
-                                        <h2>ToDo List</h2> 
+                                        <h2>ToDo App</h2> 
                                         <div class="projectLinks">
-                                            <button onClick=${projects[i]['html_url']}>code</button>
-                                 <button onClick='https://katsiarynalashcheuskaya.github.io/fenrir-intro/'>view</button>
+                                            <button id="code-button" type="button">code</button>
+                                            <button id="view-button" type="button">view</button>
                                         </div>
                                     </div>
                                   <span>${description}</span>`
-                projectList.appendChild(project)
+                const codeButton = project.querySelector("#code-button");
+                codeButton.addEventListener('click', e => window.open(projects[i]['html_url']));
+                const viewButton = project.querySelector("#view-button");
+                viewButton.addEventListener('click', e => window.open('https://katsiarynalashcheuskaya.github.io/fenrir-intro/'));
+                projectList.appendChild(project);
             }
             if (projects[i].name === 'social-network') {
                 const project = document.createElement('li');
@@ -144,11 +148,15 @@ fetch('https://api.github.com/users/katsiarynalashcheuskaya/repos')
                                  <div class="linksContainer">
                                  <h2>Social Network</h2> 
                                  <div class="projectLinks">
-                                 <button onClick=${projects[i]['html_url']}>code</button>
-                                 <button onClick='https://katsiarynalashcheuskaya.github.io/fenrir-intro/'>view</button>
+                                 <button id="code-button" type="button">code</button>
+                                            <button id="view-button" type="button">view</button>
                                         </div>
                                         </div>
                                   <span>${description}</span>`
+                const codeButton = project.querySelector("#code-button");
+                codeButton.addEventListener('click', e => window.open(projects[i]['html_url']));
+                const viewButton = project.querySelector("#view-button");
+                viewButton.addEventListener('click', e => window.open('https://katsiarynalashcheuskaya.github.io/fenrir-intro/'));
                 projectList.appendChild(project)
             }
             if (projects[i].name === 'counter') {
@@ -158,12 +166,16 @@ fetch('https://api.github.com/users/katsiarynalashcheuskaya/repos')
 <div class="linksContainer">
                                  <h2>Smart Counter</h2> 
                                  <div class="projectLinks">
-                                 <button onClick=${projects[i]['html_url']}>code</button>
-                                 <button onClick='https://katsiarynalashcheuskaya.github.io/fenrir-intro/'>view</button>
+                                  <button id="code-button" type="button">code</button>
+                                            <button id="view-button" type="button">view</button>
                                         </div>
                                         </div>
                                 
                                   <span>${description}</span>`
+                const codeButton = project.querySelector("#code-button");
+                codeButton.addEventListener('click', e => window.open(projects[i]['html_url']));
+                const viewButton = project.querySelector("#view-button");
+                viewButton.addEventListener('click', e => window.open('https://katsiarynalashcheuskaya.github.io/counter/'));
                 projectList.appendChild(project)
             }
         }
