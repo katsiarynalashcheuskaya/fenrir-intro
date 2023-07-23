@@ -39,6 +39,10 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background-color: #ffaa9a;
+}
+
 textarea {
     vertical-align: top;
     min-height: 100px;
@@ -246,7 +250,7 @@ nav a:hover {
     width: 120px;
     height: 40px;
     background-color: #fff;
-    border: 2px solid #fd735a;
+    border: 2px solid #fd735a;;
     border-radius: 5px;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 600 !important;
@@ -445,14 +449,16 @@ footer p {
     padding: 0;
 }
 
-.projectItems a {
+.projectItems h2 {
     color: #495057;
-    text-decoration: none;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 700;
     font-size: 18px;
     margin-top: 15px;
     margin-left: 10px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .projectItems span {
@@ -470,15 +476,47 @@ footer p {
     background: #fff;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     box-shadow: 0 5px 5px rgb(2 3 3 / 10%);
     margin-bottom: 20px;
 }
 
+.projectItems li:hover {
+    transform: scale(1.03);
+}
+
 .projectItems img {
+    width: 100%;
     height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.linksContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.projectLinks {
+    margin-top: 15px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.projectLinks button {
+    width: 60px;
+    margin: 0 0 0 5px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #878d8d;
+}
+
+.projectLinks button:hover {
+    background-color: #fd735a;
 }
 
 @media screen and (max-width: 1440px) {
