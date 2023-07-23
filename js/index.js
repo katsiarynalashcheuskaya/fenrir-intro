@@ -72,7 +72,6 @@ messageForm.addEventListener('submit', e => {
     }
     saveButton.addEventListener('click', saveFunction);
 
-
     newMessage.appendChild(editButton);
     newMessage.appendChild(saveButton);
     newMessage.appendChild(removeButton);
@@ -83,39 +82,6 @@ messageForm.addEventListener('submit', e => {
 
 const projectSection = document.getElementById('projects');
 const projectList = projectSection.querySelector('ul');
-
-/*const githubRequest = new XMLHttpRequest();
-githubRequest.open('GET', 'https://api.github.com/users/katsiarynalashcheuskaya/repos');
-githubRequest.send();
-githubRequest.onload = function () {
-    const projects = JSON.parse(this.response)
-    for (let i = 0; i < projects.length; i++) {
-        if (projects[i].name === 'react-todo') {
-            const project = document.createElement('li');
-            const description = projects[i]["description"];
-            project.innerHTML = `<img src='images/toDo.png' alt='ToDo List image'> 
-                                 <a href=${projects[i]['html_url']}>ToDo List</a>
-                                  <span>${description}</span>`
-            projectList.appendChild(project)
-        }
-        if (projects[i].name === 'social-network') {
-            const project = document.createElement('li');
-            const description = projects[i]["description"];
-            project.innerHTML = `<img src='images/socialnetwork.jpeg' alt='Social Network image'> 
-                                 <a href=${projects[i]['html_url']}>Social Network</a>
-                                  <span>${description}</span>`
-            projectList.appendChild(project)
-        }
-        if (projects[i].name === 'counter') {
-            const project = document.createElement('li');
-            const description = projects[i]["description"];
-            project.innerHTML = `<img src='images/counter.jpeg' alt='Social Network image'> 
-                                 <a href=${projects[i]['html_url']}>Smart Counter</a>
-                                  <span>${description}</span>`
-            projectList.appendChild(project)
-        }
-    }
-}*/
 
 fetch('https://api.github.com/users/katsiarynalashcheuskaya/repos')
     .then(function (response) {
@@ -183,3 +149,27 @@ fetch('https://api.github.com/users/katsiarynalashcheuskaya/repos')
     .catch(function (err) {
         console.log(err);
     });
+
+const btnUp = {
+    el: document.querySelector('.btn-up'),
+    show() {
+        this.el.classList.remove('btn-up_hide');
+    },
+    hide() {
+        this.el.classList.add('btn-up_hide');
+    },
+    addEventListener() {
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY || document.documentElement.scrollTop;
+            scrollY > 400 ? this.show() : this.hide();
+        });
+        document.querySelector('.btn-up').onclick = () => {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+    }
+}
+btnUp.addEventListener();
