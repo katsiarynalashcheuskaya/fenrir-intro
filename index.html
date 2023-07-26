@@ -12,12 +12,16 @@
 
 <header>
     <nav>
-        <a href='#home'>Home</a>
-        <a href='#about'>About</a>
-        <a href='#skills'>Skills</a>
-        <a href='#projects'>Projects</a>
-        <a href='#connect'>Connect</a>
+        <a href='#home' class="home">KATSIARYNA LASHCHEUSKAYA</a>
+        <div id="myLinks" class="my-links">
+            <a href='#about' onclick="onNavLinkClick()">About</a>
+            <a href='#skills' onclick="onNavLinkClick()">Skills</a>
+            <a href='#experience' onclick="onNavLinkClick()">Experience</a>
+            <a href='#projects' onclick="onNavLinkClick()">Projects</a>
+            <a href='#connect' onclick="onNavLinkClick()">Connect</a>
+        </div>
     </nav>
+    <img class="icon" src="images/menu-icon.svg" onclick="onMenuClick()">
 </header>
 
 <section id="home" class="homeSection">
@@ -31,18 +35,16 @@
             <div class="aboutDesc">
                 <h1 class="aboutTitle">About Me</h1>
                 <p class="aboutMeText">Hi there, I'm a frontend developer. I have experience in creating SPA using
-                    React, Redux,
-                    TypeScript. I'm
-                    continuously improving my English, studying new technologies and solving tasks on Codewars in my
-                    spare time.
-                    Also, my strengths are great analytical skills, responsibility and stress resistance.
+                    React, Redux, TypeScript. I'm continuously improving my English, studying new technologies and
+                    solving tasks on Codewars in my spare time. Also, my strengths are great analytical skills,
+                    responsibility and stress resistance.
                 </p>
             </div>
-            <div class="photo">
+            <!--<div class="photo">
                 <img
-                        src='images/myPhoto.jpeg'
-                        alt='My photo'/>
-            </div>
+                        src=''
+                        alt=''/>
+            </div>-->
         </div>
     </div>
 </section>
@@ -54,6 +56,16 @@
             <h2>MY SKILLS</h2>
         </div>
         <ul class="skillsItems"></ul>
+    </div>
+</section>
+
+<section id="experience" class="experienceSection">
+    <div class="experienceContainer container">
+        <div class="sectionTitle">
+            <span>where I worked</span>
+            <h2>MY EXPERIENCE</h2>
+        </div>
+        <ul class="experienceItems"></ul>
     </div>
 </section>
 
