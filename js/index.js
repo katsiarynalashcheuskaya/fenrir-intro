@@ -14,6 +14,65 @@ for (let i = 0; i < skills.length; i++) {
     skillsList.appendChild(skill);
 }
 
+const experience = [
+    {
+        company: 'Olinda Tour',
+        location: {
+            country: 'Belarus',
+            city: 'Minsk',
+            state: ''
+        },
+        position: 'Travel Agency Manager',
+        years: '2017 - 2021'
+    },
+    {
+        company: 'Olinda Tour',
+        location: {
+            country: 'Belarus',
+            city: 'Minsk',
+            state: ''
+        },
+        position: 'Travel Agency Manager',
+        years: '2017 - 2021'
+    },
+    {
+        company: 'Olinda Tour',
+        location: {
+            country: 'Belarus',
+            city: 'Minsk',
+            state: ''
+        },
+        position: 'Travel Agency Manager',
+        years: '2017 - 2021'
+    }
+]
+const experienceSection = document.querySelector('#experience')
+const experienceList = experienceSection.querySelector('ul')
+for (let i = 0; i < experience.length; i++) {
+    const experienceItem = document.createElement('li');
+    experienceItem.innerHTML = `<h3>${experience[i].company}</h3>
+    <p>${experience[i].position}</p>
+    <p>${experience[i].location.country}, ${experience[i].location.city}</p>
+    <span>${experience[i].years}</span>`
+    experienceList.appendChild(experienceItem);
+}
+
+function onMenuClick() {
+    let linksGroup = document.getElementById("myLinks");
+    if (linksGroup.style.display === "flex") {
+        linksGroup.style.display = "none";
+    } else {
+        linksGroup.style.display = "flex";
+    }
+}
+
+function onNavLinkClick() {
+    let linksGroup = document.getElementById("myLinks");
+    if (linksGroup.style.display === "flex") {
+        linksGroup.style.display = "none";
+    }
+}
+
 const messageForm = document.getElementById('leave_message')
 messageForm.addEventListener('submit', e => {
     const usersName = e.target.usersName.value;
@@ -92,7 +151,7 @@ fetch('https://api.github.com/users/katsiarynalashcheuskaya/repos')
             if (projects[i].name === 'react-todo') {
                 const project = document.createElement('li');
                 const description = projects[i]["description"];
-                project.innerHTML = `<img src='images/toDo.png' alt='ToDo List image'>
+                project.innerHTML = `<img src='images/23232.webp' alt='ToDo List image'>
                                     <div class="linksContainer">
                                         <h2>ToDo App</h2> 
                                         <div class="projectLinks">
