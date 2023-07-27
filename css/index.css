@@ -283,7 +283,7 @@ nav a:hover {
 
 /*EXPERIENCE SECTION*/
 .experienceSection {
-    background-color: #ffffff;
+    background-color: #f7f7f7;
     padding: 50px 0;
 }
 
@@ -308,12 +308,18 @@ nav a:hover {
 }
 
 .experienceItems li {
-    border: 1px dashed #b9b9b9;
-    width: 300px;
-    padding: 10px;
+    border-radius: 2px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    padding: 30px;
+    width: 320px;
+    text-align: center !important;
+    -webkit-box-shadow: 0 1px 5px rgb(5 5 6 / 15%);
     margin-bottom: 20px;
 }
 
@@ -669,7 +675,7 @@ footer p {
     }
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1215px) {
     .experienceItems {
         justify-content: center;
     }
