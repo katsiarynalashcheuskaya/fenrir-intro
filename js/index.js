@@ -57,7 +57,7 @@ for (let i = 0; i < experience.length; i++) {
     experienceList.appendChild(experienceItem);
 }
 
-function onMenuClick() {
+const onMenuClick = () => {
     let linksGroup = document.getElementById("myLinks");
     if (linksGroup.style.display === "flex") {
         linksGroup.style.display = "none";
@@ -66,7 +66,7 @@ function onMenuClick() {
     }
 }
 
-function onNavLinkClick() {
+const onNavLinkClick = () => {
     let linksGroup = document.getElementById("myLinks");
     if (linksGroup.style.display === "flex") {
         linksGroup.style.display = "none";
@@ -161,9 +161,9 @@ fetch('https://api.github.com/users/katsiarynalashcheuskaya/repos')
                                     </div>
                                   <span>${description}</span>`
                 const codeButton = project.querySelector("#code-button");
-                codeButton.addEventListener('click', e => window.open(projects[i]['html_url']));
+                codeButton.addEventListener('click', () => window.open(projects[i]['html_url']));
                 const viewButton = project.querySelector("#view-button");
-                viewButton.addEventListener('click', e => window.open('https://katsiarynalashcheuskaya.github.io/fenrir-intro/'));
+                viewButton.addEventListener('click', () => window.open('https://katsiarynalashcheuskaya.github.io/fenrir-intro/'));
                 projectList.appendChild(project);
             }
             if (projects[i].name === 'social-network') {
@@ -179,9 +179,9 @@ fetch('https://api.github.com/users/katsiarynalashcheuskaya/repos')
                                         </div>
                                   <span>${description}</span>`
                 const codeButton = project.querySelector("#code-button");
-                codeButton.addEventListener('click', e => window.open(projects[i]['html_url']));
+                codeButton.addEventListener('click', () => window.open(projects[i]['html_url']));
                 const viewButton = project.querySelector("#view-button");
-                viewButton.addEventListener('click', e => window.open('https://katsiarynalashcheuskaya.github.io/fenrir-intro/'));
+                viewButton.addEventListener('click', () => window.open('https://katsiarynalashcheuskaya.github.io/fenrir-intro/'));
                 projectList.appendChild(project)
             }
             if (projects[i].name === 'counter') {
@@ -198,9 +198,9 @@ fetch('https://api.github.com/users/katsiarynalashcheuskaya/repos')
                                 
                                   <span>${description}</span>`
                 const codeButton = project.querySelector("#code-button");
-                codeButton.addEventListener('click', e => window.open(projects[i]['html_url']));
+                codeButton.addEventListener('click', () => window.open(projects[i]['html_url']));
                 const viewButton = project.querySelector("#view-button");
-                viewButton.addEventListener('click', e => window.open('https://katsiarynalashcheuskaya.github.io/counter/'));
+                viewButton.addEventListener('click', () => window.open('https://katsiarynalashcheuskaya.github.io/counter/'));
                 projectList.appendChild(project)
             }
         }

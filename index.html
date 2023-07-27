@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Katsiaryna Lashcheuskaya">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
 </head>
 
@@ -21,7 +22,7 @@
             <a href='#connect' onclick="onNavLinkClick()">Connect</a>
         </div>
     </nav>
-    <img class="icon" src="images/menu-icon.svg" onclick="onMenuClick()">
+    <img class="icon" src="images/menu-icon.svg" onclick="onMenuClick()" alt="Menu icon">
 </header>
 
 <section id="home" class="homeSection">
@@ -40,11 +41,6 @@
                     responsibility and stress resistance.
                 </p>
             </div>
-            <!--<div class="photo">
-                <img
-                        src=''
-                        alt=''/>
-            </div>-->
         </div>
     </div>
 </section>
@@ -87,17 +83,29 @@
         </div>
         <ul>
             <li>
-                <a href='mailto:ek.sharova@icloud.com'>ek.sharova@icloud.com</a>
-                <h5>Email Me</h5>
+                <a href="mailto:ek.sharova@icloud.com" title="Send a message" target="_blank">
+                    <img src="images/Email.svg" alt="Email icon">
+                </a>
             </li>
             <li>
-                <a href="https://github.com/katsiarynalashcheuskaya">https://github.com/katsiarynalashcheuskaya</a>
-                <h5>My GitHub</h5>
+                <a href="https://github.com/katsiarynalashcheuskaya" title="GitHub" target="_blank">
+                    <img src="images/Github.svg" alt="Github icon">
+                </a>
             </li>
             <li>
-                <a href="https://www.google.com/maps/place/Charlotte,+NC/@35.2031535,-80.8398289,11z/data=!3m1!4b1!4m6!3m5!1s0x88541fc4fc381a81:0x884650e6bf43d164!8m2!3d35.2270869!4d-80.8431267!16zL20vMGZzYjg?hl=en&entry=ttu">Charlotte,
-                    NC</a>
-                <h5>My Location</h5>
+                <a href="https://www.linkedin.com/in/katsiaryna-lashcheuskaya-271210264/" title="LinkedIn" target="_blank">
+                    <img src="images/LinkedIn.svg" alt="LinkedIn icon">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/w.catrine/" title="Instagram" target="_blank">
+                    <img src="images/Instagram.svg" alt="Instagram icon">
+                </a>
+            </li>
+            <li>
+                <a href="https://t.me/kkatrinBY" title="Telegram" target="_blank">
+                    <img src="images/Telegram.svg" alt="Telegram icon">
+                </a>
             </li>
         </ul>
     </div>
@@ -105,13 +113,15 @@
 
 <section class="messageFormSection">
     <div class="container formContainer">
+        <div class="h2-block">
         <h2>Leave a Message</h2>
+        </div>
         <form id="leave_message">
             <div class="inputs">
-                <input type="text" id="usersName" name="usersName" required="true" placeholder="Your Name *">
-                <input type="email" id="usersEmail" name="usersEmail" required="true" placeholder="Your Email *">
+                <input type="text" id="usersName" name="usersName" required placeholder="Your Name *">
+                <input type="email" id="usersEmail" name="usersEmail" required placeholder="Your Email *">
             </div>
-            <textarea id="usersMessage" name="usersMessage" required="true" placeholder="Your message..."></textarea>
+            <textarea id="usersMessage" name="usersMessage" required placeholder="Your message..."></textarea>
             <button type="submit">Submit</button>
         </form>
     </div>
