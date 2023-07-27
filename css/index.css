@@ -102,7 +102,6 @@ textarea {
 /*HEADER*/
 header {
     overflow: hidden;
-    position: relative;
     height: 60px;
     background-color: rgba(37, 40, 42, 0.91);
     display: flex;
@@ -235,19 +234,6 @@ nav a:hover {
     text-align: justify;
 }
 
-/*.photo img {
-    height: 250px;
-    width: 250px;
-    object-fit: cover;
-    display: block;
-    border-radius: 50%;
-    background-color: #8498a6;
-    border: 1px solid #dee2e6;
-    padding: 0.25rem;
-    text-align: start;
-    margin-left: 50px;
-}*/
-
 .aboutWrapper {
     display: flex;
     flex-direction: row;
@@ -350,33 +336,32 @@ nav a:hover {
 }
 
 .connectSection ul {
+    border-radius: 2px;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 .connectSection li {
-    border-radius: 2px;
-    overflow: hidden;
-    border: 1px solid #eee;
-    background: #fff;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 24px;
-    width: 380px;
-    text-align: center !important;
+    justify-content: center;
+    padding: 5px 30px;
 }
 
-.connectSection li a {
-    font-size: 18px;
-    font-weight: 500;
-    color: #6e7373;
-    text-decoration: underline;
-    font-family: 'Open Sans', sans-serif;
+.connectSection li img {
+    height: 35px;
+    width: 35px;
+    opacity: 50%;
+}
+
+.connectSection li img:hover {
+    opacity: 30%;
 }
 
 .connectSection h5 {
@@ -404,6 +389,11 @@ nav a:hover {
     letter-spacing: 2px;
     margin: 0 0 30px;
     padding: 0;
+    width: 100%;
+}
+
+.messageFormSection .h2-block {
+    width: 100%;
 }
 
 form {
@@ -583,7 +573,7 @@ form input {
 /*BUTTON UP*/
 .btn-up {
     position: fixed;
-    right: 20px;
+    right: 5px;
     bottom: 10px;
     cursor: pointer;
     display: flex;
@@ -595,8 +585,8 @@ form input {
 
 .btn-up::before {
     content: "";
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background-size: 100% 100%;
     background-image: url("../images/arrow-up.svg");
 }
@@ -625,15 +615,6 @@ footer p {
         font-size: 8vh;
     }
 
-    .connectSection ul {
-        justify-content: center;
-    }
-
-    .connectSection li {
-        margin-bottom: 30px;
-        width: 100%;
-    }
-
     form .inputs {
         flex-direction: column;
     }
@@ -642,6 +623,10 @@ footer p {
 @media screen and (max-width: 1065px) {
     .homeSection h1 {
         font-size: 6vh;
+    }
+
+    .connectSection li {
+        padding: 0 10px;
     }
 
     .aboutContainer {
