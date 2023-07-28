@@ -101,7 +101,6 @@ textarea {
 
 /*HEADER*/
 header {
-    /*overflow: hidden;*/
     height: 60px;
     background-color: rgba(37, 40, 42, 0.91);
     display: flex;
@@ -111,10 +110,6 @@ header {
     position: fixed;
     width: 100%;
     z-index: 9999;
-}
-
-nav .home {
-    display: none;
 }
 
 nav {
@@ -169,6 +164,21 @@ nav a:hover {
     flex-direction: column;
     text-align: center;
     justify-content: center;
+}
+
+.homeSection button {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 20px auto;
+    border-color: #cccccc;
+}
+
+.homeSection button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: white;
+}
+
+.home {
+    display: none;
 }
 
 .homeSection h1 {
@@ -678,6 +688,7 @@ footer p {
     .skillsSection, .experienceSection, .projectsSection, .connectSection {
         padding: 40px 0;
     }
+
     .homeSection h1 {
         font-size: 4vh;
     }
