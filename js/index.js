@@ -1,3 +1,4 @@
+/*FOOTER SECTION*/
 const today = new Date();
 const thisYear = today.getFullYear();
 const footer = document.querySelector('footer')
@@ -5,6 +6,7 @@ const copyright = document.createElement('p');
 copyright.innerHTML = `&#169 Katsiaryna Lashcheuskaya ${thisYear}`;
 footer.appendChild(copyright);
 
+/*SKILLS SECTION*/
 const skills = ['HTML', 'CSS/SCSS', 'JavaScript', 'TypeScript', 'React', 'Redux', 'Redux Toolkit', 'Postman', 'Axios', 'REST API', 'Git', 'GitHub', 'Unit-test', 'Storybook', 'Material UI', 'SASS', 'Figma']
 const skillsSection = document.querySelector('#skills')
 const skillsList = skillsSection.querySelector('ul')
@@ -14,6 +16,7 @@ for (let i = 0; i < skills.length; i++) {
     skillsList.appendChild(skill);
 }
 
+/*EXPERIENCE SECTION*/
 const experience = [
     {
         company: 'Olinda Tour',
@@ -57,22 +60,7 @@ for (let i = 0; i < experience.length; i++) {
     experienceList.appendChild(experienceItem);
 }
 
-const onMenuClick = () => {
-    let linksGroup = document.getElementById("myLinks");
-    if (linksGroup.style.display === "flex") {
-        linksGroup.style.display = "none";
-    } else {
-        linksGroup.style.display = "flex";
-    }
-}
-
-const onNavLinkClick = () => {
-    let linksGroup = document.getElementById("myLinks");
-    if (linksGroup.style.display === "flex") {
-        linksGroup.style.display = "none";
-    }
-}
-
+/*MESSAGE SECTION*/
 const messageForm = document.getElementById('leave_message')
 messageForm.addEventListener('submit', e => {
     const usersName = e.target.usersName.value;
@@ -139,9 +127,9 @@ messageForm.addEventListener('submit', e => {
     hideMessageSection();
 })
 
+/*PROJECTS SECTION*/
 const projectSection = document.getElementById('projects');
 const projectList = projectSection.querySelector('ul');
-
 fetch('https://api.github.com/users/katsiarynalashcheuskaya/repos')
     .then(function (response) {
         return response.json()
@@ -209,6 +197,7 @@ fetch('https://api.github.com/users/katsiarynalashcheuskaya/repos')
         console.log(err);
     });
 
+/*BUTTON TO HOME PAGE*/
 const btnUp = {
     el: document.querySelector('.btn-up'),
     show() {
@@ -232,3 +221,22 @@ const btnUp = {
     }
 }
 btnUp.addEventListener();
+
+/*BURGER MENU */
+// The onMenuClick function hides menu items or shows them when clicking on the menu icon
+const onMenuClick = () => {
+    let linksGroup = document.getElementById("myLinks");
+    if (linksGroup.style.display === "flex") {
+        linksGroup.style.display = "none";
+    } else {
+        linksGroup.style.display = "flex";
+    }
+}
+
+// The onNavLinkClick function hides the menu items after clicking on one of the links
+const onNavLinkClick = () => {
+    let linksGroup = document.getElementById("myLinks");
+    if (linksGroup.style.display === "flex") {
+        linksGroup.style.display = "none";
+    }
+}
